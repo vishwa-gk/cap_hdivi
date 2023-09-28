@@ -1,0 +1,26 @@
+_schema-version: "3.1"
+ID: MVP_SP.config.first
+extends: MVP_SP
+
+modules:
+- name: db
+  type: hdb
+  path: db
+  parameters:
+    app-name: HDIQA
+resources:
+  - name: VI_HDI_SPDEV
+    type: com.sap.xs.hdi-container
+    parameters:
+      service: hana
+      service-plan: hdi-shared
+      config:
+        database_id: 9ee99a70-9d98-481d-ab94-00b0417b66c5
+        schema: SP_PROJECT_QA_DWC_HDI
+      service-name: SP_PROJECTQA_DWC_S1
+    properties:
+      hdi-container-name: ${service-name}
+  - name: DWC.UPS_SQL_SP_PROJECTDEV 
+    type: org.cloudfoundry.existing-service
+    parameters:
+        service-name: UPS_SQL_SP_PROJECTQA

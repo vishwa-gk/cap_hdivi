@@ -1,0 +1,62 @@
+{
+	"format_version": 1,
+	"imports": [{
+		"target_table": "Products",
+		"source_data": {
+			"data_type": "CSV",
+			"file_name": "Products.csv",
+			"has_header": true,
+            "dialect": "HANA",
+			"type_config": {
+				"delimiter": ",",
+				"do_quote": true
+			}
+		},
+		"import_settings": {
+			"import_columns": [
+                "PRODUCTID",
+                "TYPECODE", 
+                "PRODCATEGORYID", 
+                "SUPPLIER_PARTNERID", 
+                "TAXTARIFFCODE",
+                "QUANTITYUNIT", 
+                "WEIGHTMEASURE",
+                "WEIGHTUNIT",     
+                "CURRENCY",
+                "PRICE", 
+                "WIDTH", 
+                "DEPTH", 
+                "HEIGHT", 
+                "DIMENSIONUNIT", 
+                "CREATEDAT", 
+                "CREATEDBY", 
+                "CHANGEDAT", 
+                "CHANGEDBY", 
+                "PRODUCTPICURL"
+				],
+          "include_filter": []
+        },
+        "column_mappings": {
+          "PRODUCTID": "PRODUCTID",
+          "TYPECODE": "TYPECODE",
+          "PRODCATEGORYID": "PRODCATEGORYID",
+          "SUPPLIER_PARTNERID": "SUPPLIER_PARTNERID",
+          "TAXTARIFFCODE": "TAXTARIFFCODE",
+          "QUANTITYUNIT": "QUANTITYUNIT",
+          "WEIGHTMEASURE": "WEIGHTMEASURE",
+          "WEIGHTUNIT": "WEIGHTUNIT",  
+          "CURRENCY": "CURRENCY",
+          "PRICE": "PRICE",
+          "WIDTH": "WIDTH",
+          "DEPTH": "DEPTH",
+          "HEIGHT": "HEIGHT",
+          "DIMENSIONUNIT": "DIMENSIONUNIT",
+          "CREATEDBY": "CREATEDBY",
+          "CREATEDAT": "CREATEDAT",
+          "CHANGEDBY": "CHANGEDBY",
+          "CHANGEDAT": "CHANGEDAT",
+          "PRODUCTPICURL": "PRODUCTPICURL"
+        }
+      }
+    ]
+  }

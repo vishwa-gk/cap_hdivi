@@ -1,0 +1,41 @@
+_schema-version: "2.1"
+ID: MVP_SP
+version: 0.0.1
+modules:
+# --------------------Deployer (side car)--------------
+- name: db # deployer
+# -----------------------------------------------------
+  type: hdb
+  path: db
+  parameters:
+    app-name: HDIDEV
+  requires:
+  - name: VI_HDI_SPDEV # Depends on the HDI Container
+    properties:
+      TARGET_CONTAINER: ~{hdi-container-name}
+  - name: DWC.UPS_SQL_SP_PROJECTDEV  # needs to be created first in the space in which this HDI shared service gets created
+    group: SERVICE_REPLACEMENTS
+    properties:
+      key: ups_schema_access
+      service: '~{ups_sql_sp}'
+resources:
+# --------------------HDI Container--------------
+- name: VI_HDI_SPDEV
+# -----------------------------------------------
+  type: com.sap.xs.hdi-container
+  parameters:
+    config:
+      database_id: 9ee99a70-9d98-481d-ab94-00b0417b66c5 # to deploy against DWC HC
+      schema: SP_PROJECTDEV_DWC_HDI
+    service-name: SP_PROJECTDEV_DWC_S1
+  properties:
+    hdi-container-name: ${service-name}
+# --------------------UPS user specific procedure --------------
+# needs to be created first in the CF space in which this HDI shared service gets created. Credential you get from DWC Space management. You use this service to access DWC views
+- name: DWC.UPS_SQL_SP_PROJECTDEV 
+# # --------------------------------------------------------------
+  type: org.cloudfoundry.existing-service
+  parameters:
+    service-name: UPS_SQL_SP_PROJECTDEV
+  properties:
+    ups_sql_sp: ${service-name}

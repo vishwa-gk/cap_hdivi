@@ -1,0 +1,4 @@
+[
+    "src/CalculationViews/V_SalesOrderCV.hdbcalculationview",
+    "src/CalculationViews/Sales_Fact_HC.hdbcalculationview"
+]

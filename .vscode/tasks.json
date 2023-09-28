@@ -1,0 +1,14 @@
+{
+    "tasks": [
+        {
+            "type": "npm",
+            "script": "test",
+            "path": "db/",
+            "problemMatcher": [
+                "$gulp-tsc"
+            ],
+            "group": "test",
+            "label": "test - db"
+        }
+    ]
+}

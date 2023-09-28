@@ -1,0 +1,12 @@
+mta_archives/
+
+# auto generated wildcard
+db/.env
+# auto generated wildcard
+SP_PROJECTDEV/db/.env
+# auto generated wildcard
+cap_hdivi/db/.env
+
+# Remove unit test results
+srv/.testresults
+mta*

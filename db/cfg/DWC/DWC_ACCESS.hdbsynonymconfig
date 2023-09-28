@@ -1,0 +1,8 @@
+{
+  "S_Sales_ADS": {
+    "target": {
+      "object": "Sales_ADS",
+      "schema.configure": "ups_schema_access/schema"
+    }
+  }
+}

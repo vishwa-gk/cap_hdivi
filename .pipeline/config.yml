@@ -1,0 +1,43 @@
+###
+# This file configures the project "Piper" pipeline of your project.
+# For a reference of the configuration concept and available options, please have a look into its documentation.
+#
+# The documentation for the most recent pipeline version can always be found at:
+#    https://sap.github.io/jenkins-library/
+#
+# This is a YAML-file. YAML is an indentation-sensitive file format. Please make sure to properly indent changes to it.
+###
+
+
+
+### General project setup
+general:
+  inferBuildTool: true
+
+steps:
+  ###  Stage Build 
+  mtaBuild:
+    buildTarget: 'CF'
+  ###  Stage Deploy CF deploy
+  cloudFoundryDeploy:
+    deployTool: 'mtaDeployPlugin'
+    deployType: 'standard'
+    cloudFoundry:
+      org: 'CF-ORG-CSM-E2E-DEMOS'
+      space: 'CSM-E2E-DEMOS-DWC-SPACE'
+      credentialsId: 'CF-CREDENTIALSID'
+      database_id: 9ee99a70-9d98-xxx-xxxx-00b0417b66c5
+  ###  Stage Validation, Execute npm script 'test' to validate db artifacts.
+  npmExecuteScripts:
+    buildDescriptorExcludeList:
+      - db/package.json
+    runScripts: 
+      - "test"
+  ###  Stage tmsUpload, Trigger cTMS to move through landscape
+  tmsUpload:
+    credentialsId: 'BTP-TMS'
+    nodeName: 'IMPORT_DEV'
+    verbose: 'true'
+
+
+

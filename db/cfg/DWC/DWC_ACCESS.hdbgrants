@@ -1,0 +1,17 @@
+{
+	"ups_schema_access": {
+		"object_owner": {
+			"roles": [],
+			"container_roles": [],
+			"object_privileges": [
+				{
+				  "type": "VIEW",
+				  "name": "Sales_ADS",
+				  "privileges_with_grant_option": [
+				    "SELECT"
+				  ]
+				}
+				]
+		}
+	}
+}

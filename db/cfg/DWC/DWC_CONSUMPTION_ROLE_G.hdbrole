@@ -1,0 +1,63 @@
+{
+  "role": {
+    "name": "DWC_CONSUMPTION_ROLE#",
+    "object_privileges": [
+      {
+        "name": "SourceData::SalesOrders",
+        "type": "TABLE",
+        "privileges_with_grant_option": [
+          "SELECT"
+        ]
+      },
+      {
+        "name": "SourceData::SalesOrderItems",
+        "type": "TABLE",
+        "privileges_with_grant_option": [
+          "SELECT"
+        ]
+      },
+      {
+        "name": "V_SalesOrderCV",
+        "type": "VIEW",
+        "privileges_with_grant_option": [
+          "SELECT"
+        ]
+      },
+      {
+        "name": "get_po_counts",
+        "type": "FUNCTION",
+        "privileges_with_grant_option": [
+          "EXECUTE"
+        ]
+      },
+      {
+        "name": "ProductTexts",
+        "type": "TABLE",
+        "privileges_with_grant_option": [
+          "SELECT"
+        ]
+      },
+      {
+        "name": "Products",
+        "type": "TABLE",
+        "privileges_with_grant_option": [
+          "SELECT"
+        ]
+      },
+      {
+        "name": "ProductCategoryTexts",
+        "type": "TABLE",
+        "privileges_with_grant_option": [
+          "SELECT"
+        ]
+      },
+      {
+        "name": "Sales_Facts_HC",
+        "type": "VIEW",
+        "privileges_with_grant_option": [
+          "SELECT"
+        ]
+      }
+    ]
+  }
+}
